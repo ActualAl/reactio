@@ -13,12 +13,12 @@ module.exports = function(grunt) {
             dest: 'dest',
             ext: 'js'
           }
-        
         ]
       }
     }
   });
 
+  grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-react');
 
