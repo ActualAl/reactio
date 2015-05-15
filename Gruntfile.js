@@ -15,6 +15,16 @@ module.exports = function(grunt) {
           }
         ]
       }
+    },
+    browserify: {
+      dist: {
+        files: {
+          'build/module.js': ['client/scripts/**/*.js'],
+        },
+        options: {
+          transform: ['coffeeify']
+        }
+      }
     }
   });
 
