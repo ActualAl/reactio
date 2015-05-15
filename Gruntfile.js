@@ -2,6 +2,25 @@ module.exports = function(grunt) {
 
   //Project conf.
   grunt.initConfig({
-    pkg: grunt.file.readJSON('package.json')
+    pkg: grunt.file.readJSON('package.json'),
+    react: {
+      dynamic_mappings:{
+        files: [
+          {
+            expand: true,
+            cwd: 'src/',
+            src:['**/*.jsx'],
+            dest: 'dest',
+            ext: 'js'
+          }
+        
+        ]
+      }
+    }
   });
+
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-react');
+
+  grunt.registerTask('default', ['react']);
 };
